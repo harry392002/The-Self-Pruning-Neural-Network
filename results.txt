@@ -1,0 +1,75 @@
+ Device: cuda
+100%|██████████| 170M/170M [00:03<00:00, 43.5MB/s]
+
+============================================================
+  lam_target=1.0  warmup=10  ramp=10  epochs=50
+============================================================
+  [warmup] Ep   1  lam=0.00  clf=1.6360  |  acc=64.95%  sparse=0.0%
+  [warmup] Ep   5  lam=0.00  clf=1.1352  |  acc=77.97%  sparse=0.0%
+  [warmup] Ep  10  lam=0.00  clf=1.0108  |  acc=83.30%  sparse=0.0%
+  [ramp  ] Ep  15  lam=0.50  clf=0.9418  |  acc=85.76%  sparse=0.0%
+  [ramp  ] Ep  20  lam=1.00  clf=0.8897  |  acc=86.71%  sparse=5.3%
+  [prune ] Ep  25  lam=1.00  clf=0.8392  |  acc=88.17%  sparse=17.8%
+  [prune ] Ep  30  lam=1.00  clf=0.8071  |  acc=89.22%  sparse=27.4%
+  [prune ] Ep  35  lam=1.00  clf=0.7763  |  acc=90.21%  sparse=33.4%
+  [prune ] Ep  40  lam=1.00  clf=0.7477  |  acc=90.55%  sparse=36.8%
+  [prune ] Ep  45  lam=1.00  clf=0.7321  |  acc=90.91%  sparse=38.3%
+  [prune ] Ep  50  lam=1.00  clf=0.7313  |  acc=90.91%  sparse=38.6%
+
+  Final  acc=90.91%   sparsity=38.58%
+
+============================================================
+  lam_target=5.0  warmup=10  ramp=10  epochs=50
+============================================================
+  [warmup] Ep   1  lam=0.00  clf=1.6400  |  acc=64.33%  sparse=0.0%
+  [warmup] Ep   5  lam=0.00  clf=1.1291  |  acc=75.67%  sparse=0.0%
+  [warmup] Ep  10  lam=0.00  clf=1.0070  |  acc=82.17%  sparse=0.0%
+  [ramp  ] Ep  15  lam=2.50  clf=0.9338  |  acc=85.09%  sparse=19.2%
+  [ramp  ] Ep  20  lam=5.00  clf=0.8792  |  acc=87.11%  sparse=68.3%
+  [prune ] Ep  25  lam=5.00  clf=0.8409  |  acc=88.26%  sparse=82.4%
+  [prune ] Ep  30  lam=5.00  clf=0.8125  |  acc=89.00%  sparse=87.0%
+  [prune ] Ep  35  lam=5.00  clf=0.7843  |  acc=89.53%  sparse=89.0%
+  [prune ] Ep  40  lam=5.00  clf=0.7672  |  acc=89.89%  sparse=89.9%
+  [prune ] Ep  45  lam=5.00  clf=0.7551  |  acc=90.11%  sparse=90.3%
+  [prune ] Ep  50  lam=5.00  clf=0.7532  |  acc=90.11%  sparse=90.3%
+
+  Final  acc=90.11%   sparsity=90.31%
+
+============================================================
+  lam_target=15.0  warmup=10  ramp=10  epochs=50
+============================================================
+  [warmup] Ep   1  lam=0.00  clf=1.6323  |  acc=65.62%  sparse=0.0%
+  [warmup] Ep   5  lam=0.00  clf=1.1308  |  acc=78.49%  sparse=0.0%
+  [warmup] Ep  10  lam=0.00  clf=1.0047  |  acc=83.39%  sparse=0.0%
+  [ramp  ] Ep  15  lam=7.50  clf=0.9235  |  acc=86.09%  sparse=68.4%
+  [ramp  ] Ep  20  lam=15.00  clf=0.8861  |  acc=86.30%  sparse=92.4%
+  [prune ] Ep  25  lam=15.00  clf=0.8555  |  acc=85.99%  sparse=96.0%
+  [prune ] Ep  30  lam=15.00  clf=0.8325  |  acc=86.77%  sparse=97.1%
+  [prune ] Ep  35  lam=15.00  clf=0.8068  |  acc=87.00%  sparse=97.6%
+  [prune ] Ep  40  lam=15.00  clf=0.7906  |  acc=86.60%  sparse=97.8%
+  [prune ] Ep  45  lam=15.00  clf=0.7842  |  acc=86.60%  sparse=97.9%
+  [prune ] Ep  50  lam=15.00  clf=0.7786  |  acc=86.13%  sparse=97.9%
+
+  Final  acc=86.13%   sparsity=97.88%
+
+
+--------------------------------------------------
+  Results Summary
+--------------------------------------------------
+  Lambda         Test Acc (%)   Sparsity (%)
+--------------------------------------------------
+  1.0                   90.91          38.58
+  5.0                   90.11          90.31
+  15.0                  86.13          97.88
+--------------------------------------------------
+
+Best model: lam=1.0  acc=90.91%  sparsity=38.58%
+
+Plot saved -> gate_distributions.png
+
+Per-layer gate statistics (best model):
+  Layer       Total gates   Pruned (<0.5)   Sparsity %
+  ----------------------------------------------------
+  fc1             4194304         1660959        39.6%
+  fc2              131072            8833         6.7%
+  fc3                2560              10         0.4%
